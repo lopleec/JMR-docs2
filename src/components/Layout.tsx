@@ -120,6 +120,7 @@ export function Layout() {
       title: '快速开始',
       items: [
         { title: '概述', path: '/' },
+        { title: '开始使用', path: '/getting-started' },
       ]
     },
     {
@@ -145,9 +146,16 @@ export function Layout() {
 
   const searchData = [
     { title: 'JMR API 概述', path: '/', description: 'JMR API 介绍、API Base URL 及文档结构', keywords: ['home', '首页', '介绍', '基础'] },
-    { title: '开始使用', path: '/#intro', description: '选择你的环境来开始使用', keywords: ['开始', 'start', '环境'] },
+    { title: '概述: 开始使用', path: '/#intro', description: '选择你的环境来开始使用', keywords: ['开始', 'start', '环境'] },
     { title: 'API Base URL', path: '/#base-url', description: 'JMR API 的基础请求地址', keywords: ['url', 'base', '地址', '接口'] },
     
+    { title: '开始使用', path: '/getting-started', description: '注册、登录、购买额度、创建 API Key 及接口配置', keywords: ['开始', 'start', '注册', '登录', '充值', 'api key'] },
+    { title: '开始使用: 注册账号', path: '/getting-started#step-1', description: '微信注册或邮箱注册', keywords: ['注册', 'register', '微信', '邮箱'] },
+    { title: '开始使用: 登录账号', path: '/getting-started#step-2', description: '微信登录或账号登录', keywords: ['登录', 'login', '微信', '账号'] },
+    { title: '开始使用: 购买额度', path: '/getting-started#step-3', description: '在线充值与计费参考', keywords: ['购买', '充值', '额度', '积分', '价格'] },
+    { title: '开始使用: 创建 API 令牌', path: '/getting-started#step-4', description: '在控制台添加令牌', keywords: ['api', 'key', '令牌', '创建'] },
+    { title: '开始使用: 接口配置', path: '/getting-started#step-5', description: '不同场景的 BASE_URL 配置', keywords: ['接口', '配置', 'base_url', 'url'] },
+
     { title: 'OpenClaw 快速开始', path: '/openclaw/quickstart', description: '安装 OpenClaw、运行配置向导、编辑配置文件', keywords: ['openclaw', '安装', '配置', 'install', 'setup'] },
     { title: 'OpenClaw: 安装', path: '/openclaw/quickstart#install', description: '通过一键脚本或 npm 安装 OpenClaw', keywords: ['安装', 'install', 'npm', 'brew', '脚本'] },
     { title: 'OpenClaw: 运行配置向导', path: '/openclaw/quickstart#onboard', description: '运行 openclaw onboard 命令', keywords: ['onboard', '向导', '初始化'] },

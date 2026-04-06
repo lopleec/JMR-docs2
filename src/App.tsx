@@ -6,6 +6,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
+import { GettingStarted } from './pages/GettingStarted';
 import { OpenClawQuickStart } from './pages/OpenClawQuickStart';
 import { OpenClawTroubleshooting } from './pages/OpenClawTroubleshooting';
 import { OpenCodeConfig } from './pages/OpenCodeConfig';
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="getting-started" element={<GettingStarted />} />
           <Route path="openclaw/quickstart" element={<OpenClawQuickStart />} />
           <Route path="openclaw/troubleshooting" element={<OpenClawTroubleshooting />} />
           <Route path="opencode/config" element={<OpenCodeConfig />} />
