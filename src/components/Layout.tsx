@@ -134,6 +134,12 @@ export function Layout() {
       items: [
         { title: '配置文档', path: '/opencode/config' },
       ]
+    },
+    {
+      title: 'CC Switch 专区',
+      items: [
+        { title: '配置文档', path: '/ccswitch/config' },
+      ]
     }
   ];
 
@@ -162,6 +168,11 @@ export function Layout() {
     { title: 'OpenCode: 替换方式', path: '/opencode/config#replace-method', description: '全部替换原文件中的内容', keywords: ['替换', 'replace', '全部'] },
     { title: 'OpenCode: 填写 API Key', path: '/opencode/config#api-key', description: '生成 OpenCode 配置文件', keywords: ['api', 'key', '密钥', '配置'] },
     { title: 'OpenCode: 复制配置', path: '/opencode/config#copy-config', description: '复制生成的 JSON 配置', keywords: ['复制', 'copy', 'json'] },
+
+    { title: 'CC Switch 配置文档', path: '/ccswitch/config', description: 'JMRAI 接入 CC Switch 配置指南', keywords: ['ccswitch', 'cc', 'switch', '配置', 'claude', 'code', 'gemini', 'codex'] },
+    { title: 'CC Switch: 下载与安装', path: '/ccswitch/config#step-1', description: '下载并安装 CC Switch', keywords: ['下载', '安装', 'download', 'install'] },
+    { title: 'CC Switch: 配置供应商信息', path: '/ccswitch/config#step-2', description: '在 CC Switch 中配置 JMRAI 供应商', keywords: ['配置', '供应商', 'provider', '参数'] },
+    { title: 'CC Switch: 运行 CLI', path: '/ccswitch/config#step-3', description: '保存配置并运行命令行工具', keywords: ['运行', 'cli', '命令', '激活'] },
   ];
 
   const searchResults = searchQuery.trim() === '' 
