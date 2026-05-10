@@ -62,7 +62,7 @@ export function CCSwitchConfig() {
             </tr>
             <tr>
               <td className="py-3 px-4 font-medium text-zinc-900 dark:text-zinc-100">API 请求地址</td>
-              <td className="py-3 px-4"><code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-orange-500 font-mono text-sm">https://jmrai.net/v1</code></td>
+              <td className="py-3 px-4"><code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-orange-500 font-mono text-sm">https://jmrai.net</code></td>
             </tr>
             <tr>
               <td className="py-3 px-4 font-medium text-zinc-900 dark:text-zinc-100">模型名称/ID</td>
@@ -87,7 +87,7 @@ export function CCSwitchConfig() {
         </p>
         <ul className="list-disc list-inside text-orange-800 dark:text-orange-200/80 space-y-1 text-sm">
           <li>确保您的 API Key 具有相应模型的访问权限。</li>
-          <li>如遇连接问题，请确认 <strong>API 请求地址</strong> 已正确填写为 <code className="px-1.5 py-0.5 rounded-md bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300 font-mono">https://jmrai.net/v1</code>。</li>
+          <li>如遇连接问题，请确认 <strong>API 请求地址</strong> 已正确填写为 <code className="px-1.5 py-0.5 rounded-md bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300 font-mono">https://jmrai.net</code>。</li>
         </ul>
       </blockquote>
     </div>
