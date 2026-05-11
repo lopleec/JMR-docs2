@@ -11,6 +11,7 @@ import { OpenClawQuickStart } from './pages/OpenClawQuickStart';
 import { OpenClawTroubleshooting } from './pages/OpenClawTroubleshooting';
 import { OpenCodeConfig } from './pages/OpenCodeConfig';
 import { CCSwitchConfig } from './pages/CCSwitchConfig';
+import { ClaudeCodeConfig } from './pages/ClaudeCodeConfig';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="openclaw/troubleshooting" element={<OpenClawTroubleshooting />} />
           <Route path="opencode/config" element={<OpenCodeConfig />} />
           <Route path="ccswitch/config" element={<CCSwitchConfig />} />
+          <Route path="claudecode/config" element={<ClaudeCodeConfig />} />
         </Route>
       </Routes>
     </BrowserRouter>

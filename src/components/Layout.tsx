@@ -137,6 +137,12 @@ export function Layout() {
       ]
     },
     {
+      title: 'Claude Code 专区',
+      items: [
+        { title: '安装使用教程', path: '/claudecode/config' },
+      ]
+    },
+    {
       title: 'CC Switch 专区',
       items: [
         { title: '配置文档', path: '/ccswitch/config' },
@@ -176,6 +182,14 @@ export function Layout() {
     { title: 'OpenCode: 替换方式', path: '/opencode/config#replace-method', description: '全部替换原文件中的内容', keywords: ['替换', 'replace', '全部'] },
     { title: 'OpenCode: 填写 API Key', path: '/opencode/config#api-key', description: '生成 OpenCode 配置文件', keywords: ['api', 'key', '密钥', '配置'] },
     { title: 'OpenCode: 复制配置', path: '/opencode/config#copy-config', description: '复制生成的 JSON 配置', keywords: ['复制', 'copy', 'json'] },
+
+    { title: 'Claude Code 安装使用教程', path: '/claudecode/config', description: 'Claude Code 命令行工具的安装与配置', keywords: ['claude', 'code', 'cli', '配置', '安装'] },
+    { title: 'Claude Code: 系统要求', path: '/claudecode/config#requirements', description: '操作系统的硬件与软件要求', keywords: ['系统要求', '依赖', 'mac', 'windows'] },
+    { title: 'Claude Code: 安装', path: '/claudecode/config#install', description: '支持跨平台的原生及 NPM 安装方式', keywords: ['安装', 'install', 'windows', 'macos', 'linux'] },
+    { title: 'Claude Code: 配置使用', path: '/claudecode/config#config', description: '配置 API Token 与 BASE_URL', keywords: ['配置', 'token', 'url', 'settings', 'json'] },
+    { title: 'Claude Code: 无法连接服务修复', path: '/claudecode/config#troubleshooting-connection', description: '修复无法连接 Anthropic API 的方法', keywords: ['连接', '报错', '修复', 'offline'] },
+    { title: 'Claude Code: 常见问题', path: '/claudecode/config#faq', description: '常见 FAQ 及报错解决', keywords: ['faq', '问题', '解答', 'login', '出错'] },
+    { title: 'Claude Code: 常用命令', path: '/claudecode/config#commands', description: 'Claude Code CLI 的命令速查表', keywords: ['命令', 'command', 'cli', '用法'] },
 
     { title: 'CC Switch 配置文档', path: '/ccswitch/config', description: 'JMRAI 接入 CC Switch 配置指南', keywords: ['ccswitch', 'cc', 'switch', '配置', 'claude', 'code', 'gemini', 'codex'] },
     { title: 'CC Switch: 下载与安装', path: '/ccswitch/config#step-1', description: '下载并安装 CC Switch', keywords: ['下载', '安装', 'download', 'install'] },
