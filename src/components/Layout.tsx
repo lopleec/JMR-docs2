@@ -143,6 +143,12 @@ export function Layout() {
       ]
     },
     {
+      title: 'Codex 专区',
+      items: [
+        { title: '安装使用教程', path: '/codex/config' },
+      ]
+    },
+    {
       title: 'CC Switch 专区',
       items: [
         { title: '配置文档', path: '/ccswitch/config' },
@@ -190,6 +196,13 @@ export function Layout() {
     { title: 'Claude Code: 无法连接服务修复', path: '/claudecode/config#troubleshooting-connection', description: '修复无法连接 Anthropic API 的方法', keywords: ['连接', '报错', '修复', 'offline'] },
     { title: 'Claude Code: 常见问题', path: '/claudecode/config#faq', description: '常见 FAQ 及报错解决', keywords: ['faq', '问题', '解答', 'login', '出错'] },
     { title: 'Claude Code: 常用命令', path: '/claudecode/config#commands', description: 'Claude Code CLI 的命令速查表', keywords: ['命令', 'command', 'cli', '用法'] },
+
+    { title: 'Codex CLI 安装与配置教程', path: '/codex/config', description: 'Codex CLI 的各平台安装与配置指南', keywords: ['codex', 'cli', '配置', '安装', 'windows', 'mac', 'linux'] },
+    { title: 'Codex CLI: Windows 教程', path: '/codex/config#windows-tutorial', description: 'Windows 下的安装与配置步骤', keywords: ['windows', 'win', '配置', '安装'] },
+    { title: 'Codex CLI: Mac 教程', path: '/codex/config#mac-tutorial', description: 'macOS 下的安装与配置步骤', keywords: ['mac', 'macos', '苹果', '配置', '安装'] },
+    { title: 'Codex CLI: Linux 教程', path: '/codex/config#linux-tutorial', description: 'Linux 下的安装与配置步骤', keywords: ['linux', 'ubuntu', 'centos', '配置', '安装'] },
+    { title: 'Codex CLI: VSCode 插件', path: '/codex/config#vscode-plugin', description: 'VSCode Codex 插件的配置方法', keywords: ['vscode', '插件', '扩展', '配置'] },
+    { title: 'Codex CLI: 常见问题', path: '/codex/config#faq', description: 'Codex CLI 相关的常见问题与排查步骤', keywords: ['faq', '排查', '问题', '报错'] },
 
     { title: 'CC Switch 配置文档', path: '/ccswitch/config', description: 'JMRAI 接入 CC Switch 配置指南', keywords: ['ccswitch', 'cc', 'switch', '配置', 'claude', 'code', 'gemini', 'codex'] },
     { title: 'CC Switch: 下载与安装', path: '/ccswitch/config#step-1', description: '下载并安装 CC Switch', keywords: ['下载', '安装', 'download', 'install'] },

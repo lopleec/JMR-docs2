@@ -1,5 +1,6 @@
 import React from 'react';
 import { CodeBlock } from '../components/CodeBlock';
+import { Link } from 'react-router-dom';
 
 export function ClaudeCodeConfig() {
   return (
@@ -13,6 +14,15 @@ export function ClaudeCodeConfig() {
           Claude Code 是一个强大的 AI 编程助手，让您可以直接在终端中与 AI 协作编程。本教程将指导您完成安装和配置过程。
         </p>
       </div>
+
+      <blockquote className="border-l-4 border-orange-500 bg-orange-50 dark:bg-orange-500/10 px-4 py-3 rounded-r-lg mt-8 mb-8 not-prose">
+        <p className="font-semibold text-orange-800 dark:text-orange-200 mb-2 flex items-center gap-2">
+          💡 温馨提示：
+        </p>
+        <p className="text-orange-800 dark:text-orange-200/80 text-sm">
+          推荐您使用 <Link to="/ccswitch/config" className="underline font-medium hover:text-orange-600 dark:hover:text-orange-400">CC Switch</Link> 进行配置，不仅能避免由于手动编辑文件引发的格式错误，还方便您统一管理。
+        </p>
+      </blockquote>
 
       <h2 id="requirements" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">
         系统要求
