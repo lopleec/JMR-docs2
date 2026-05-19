@@ -201,7 +201,6 @@ export function Layout() {
     { title: 'Codex CLI: Windows 教程', path: '/codex/config#windows-tutorial', description: 'Windows 下的安装与配置步骤', keywords: ['windows', 'win', '配置', '安装'] },
     { title: 'Codex CLI: Mac 教程', path: '/codex/config#mac-tutorial', description: 'macOS 下的安装与配置步骤', keywords: ['mac', 'macos', '苹果', '配置', '安装'] },
     { title: 'Codex CLI: Linux 教程', path: '/codex/config#linux-tutorial', description: 'Linux 下的安装与配置步骤', keywords: ['linux', 'ubuntu', 'centos', '配置', '安装'] },
-    { title: 'Codex CLI: VSCode 插件', path: '/codex/config#vscode-plugin', description: 'VSCode Codex 插件的配置方法', keywords: ['vscode', '插件', '扩展', '配置'] },
     { title: 'Codex CLI: 常见问题', path: '/codex/config#faq', description: 'Codex CLI 相关的常见问题与排查步骤', keywords: ['faq', '排查', '问题', '报错'] },
 
     { title: 'CC Switch 配置文档', path: '/ccswitch/config', description: 'JMRAI 接入 CC Switch 配置指南', keywords: ['ccswitch', 'cc', 'switch', '配置', 'claude', 'code', 'gemini', 'codex'] },

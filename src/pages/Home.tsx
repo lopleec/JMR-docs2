@@ -75,7 +75,21 @@ export function Home() {
       <h2 id="base-url" className="text-2xl font-semibold mt-12 mb-6 border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">
         API Base URL
       </h2>
-      <CodeBlock code="https://jmrai.net/" language="url" />
+      <blockquote className="border-l-4 border-orange-500 bg-orange-50 dark:bg-orange-500/10 px-4 py-3 rounded-r-lg mt-4 mb-4 not-prose">
+        <p className="text-orange-800 dark:text-orange-200 text-sm m-0">
+          <strong>💡 提示</strong>：优先填写 <code>https://jmrai.net/</code>，不行再填 <code>https://jmrai.net/v1</code>
+        </p>
+      </blockquote>
+      <div className="space-y-4">
+        <div>
+          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-2">首选地址</p>
+          <CodeBlock code="https://jmrai.net/" language="text" />
+        </div>
+        <div>
+          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-2">备选地址</p>
+          <CodeBlock code="https://jmrai.net/v1" language="text" />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CodeBlock } from '../components/CodeBlock';
 import { Link } from 'react-router-dom';
 
 export function ClaudeCodeConfig() {
+  const [apiKey, setApiKey] = useState('');
+  const [modelId, setModelId] = useState('');
+  const displayApiKey = apiKey || 'sk-你的API令牌';
+
+  const generateSettings = () => {
+    const config: any = {
+      "env": {
+        "ANTHROPIC_AUTH_TOKEN": displayApiKey,
+        "ANTHROPIC_BASE_URL": "https://jmrai.net",
+        "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"
+      }
+    };
+    if (modelId) {
+      config.env["ANTHROPIC_MODEL"] = modelId;
+    }
+    return JSON.stringify(config, null, 2);
+  };
+
   return (
     <div className="prose prose-zinc dark:prose-invert max-w-none">
       <div className="mb-8 not-prose">
@@ -23,6 +41,20 @@ export function ClaudeCodeConfig() {
           推荐您使用 <Link to="/ccswitch/config" className="underline font-medium hover:text-orange-600 dark:hover:text-orange-400">CC Switch</Link> 进行配置，不仅能避免由于手动编辑文件引发的格式错误，还方便您统一管理。
         </p>
       </blockquote>
+
+      <h2 id="fill-config" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">填写信息获取配置</h2>
+      <p className="text-zinc-600 dark:text-zinc-400">填写下方的 API Key 和模型 ID，下方教程中的配置文件内容将自动更新，您之后可直接复制。</p>
+      
+      <div className="my-6 p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl not-prose space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">API Key</label>
+          <input type="text" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder="输入你的 JMR API 密钥" className="w-full px-3 py-2 bg-white dark:bg-[#0d0d0d] border border-zinc-300 dark:border-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-zinc-900 dark:text-zinc-100" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">模型 ID</label>
+          <input type="text" value={modelId} onChange={e => setModelId(e.target.value)} placeholder="可选，例如: claude-3-opus-20240229" className="w-full px-3 py-2 bg-white dark:bg-[#0d0d0d] border border-zinc-300 dark:border-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-zinc-900 dark:text-zinc-100" />
+        </div>
+      </div>
 
       <h2 id="requirements" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">
         系统要求
@@ -138,16 +170,10 @@ export function ClaudeCodeConfig() {
         <li><strong>Mac:</strong> <code>~/.claude/settings.json</code> 或 <code>.claude/settings.json</code></li>
         <li><strong>Linux:</strong> <code>~/.claude/settings.json</code></li>
       </ul>
-      <p>写入以下配置信息，将 <code>ANTHROPIC_AUTH_TOKEN</code> 替换为你的API令牌，<code>ANTHROPIC_MODEL</code> 可以替换为您需要的其他模型ID</p>
+      <p>写入以下配置信息，将代码中的认证信息替换为您自己的配置（上方填写的内容会自动更新此处配置）</p>
       <CodeBlock 
         language="json"
-        code={`{
-  "env": {
-    "ANTHROPIC_AUTH_TOKEN": "sk-你的API令牌",
-    "ANTHROPIC_BASE_URL": "https://jmrai.net",
-    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"
-  }
-}`} 
+        code={generateSettings()} 
       />
       <p>macOS 在访达界面按下 <code>Command+Shift+G</code>，输入路径 <code>~/.claude</code> 回车，即可打开配置目录。</p>
       <p>Ubuntu/macOS 也可通过 vi 或者 vim 命令直接创建或者修改 <code>settings.json</code> 文件。</p>

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CodeBlock } from '../components/CodeBlock';
 import { Link } from 'react-router-dom';
 
 export function CodexCLIConfig() {
+  const [apiKey, setApiKey] = useState('');
+  const [modelId, setModelId] = useState('');
+  const displayApiKey = apiKey || 'sk-xxx';
+  const displayModelId = modelId || 'gpt-5.5';
+
   return (
     <div className="prose prose-zinc dark:prose-invert max-w-none">
       <div className="mb-8 not-prose">
@@ -20,6 +25,20 @@ export function CodexCLIConfig() {
           推荐您使用 <Link to="/ccswitch/config" className="underline font-medium hover:text-orange-600 dark:hover:text-orange-400">CC Switch</Link> 进行配置，不仅能避免由于手动编辑文件引发的格式错误，还方便您统一管理。
         </p>
       </blockquote>
+
+      <h2 id="fill-config" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">填写信息获取配置</h2>
+      <p className="text-zinc-600 dark:text-zinc-400">填写下方的 API Key 和模型 ID，下方教程中的配置文件内容将自动更新，您之后可直接复制。</p>
+      
+      <div className="my-6 p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl not-prose space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">API Key</label>
+          <input type="text" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder="输入你的 JMR API 密钥" className="w-full px-3 py-2 bg-white dark:bg-[#0d0d0d] border border-zinc-300 dark:border-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-zinc-900 dark:text-zinc-100" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">模型 ID</label>
+          <input type="text" value={modelId} onChange={e => setModelId(e.target.value)} placeholder="例如: gpt-5.5" className="w-full px-3 py-2 bg-white dark:bg-[#0d0d0d] border border-zinc-300 dark:border-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-zinc-900 dark:text-zinc-100" />
+        </div>
+      </div>
 
       <h2 id="windows-tutorial" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">
         Windows 版本教程
@@ -74,13 +93,13 @@ export function CodexCLIConfig() {
         <li>进入当前用户的用户目录下的 <code>.codex</code> 文件夹中，例如：<code>C:\Users\testuser\.codex</code>。<br/>
         （<strong>注意</strong>：如果看不到该目录，说明您没有打开 Windows 的“显示隐藏的项目”，请先在文件资源管理器中开启。）</li>
         <li>如果没有 <code>.codex</code> 文件夹，请手动创建该文件夹，然后在其中创建 <code>config.toml</code> 以及 <code>auth.json</code> 两个文件。</li>
-        <li><strong>填写配置</strong> (需要将 <code>sk-xxx</code> 替换成您自己创建的真实 SK)。
+        <li><strong>填写配置</strong> (需要将代码中的 API Key 替换成您自己创建的真实 SK)。
           <p>a. <code>auth.json</code> 中的配置：</p>
-          <CodeBlock language="json" code='{"OPENAI_API_KEY": "sk-xxx"}' />
+          <CodeBlock language="json" code={`{"OPENAI_API_KEY": "${displayApiKey}"}`} />
           <p>b. <code>config.toml</code> 中的配置（直接粘贴下面的内容即可）：<br/>
           <code>model_reasoning_effort</code> 可选值为 <code>high</code>, <code>medium</code>, <code>low</code>，分别代表模型思考的努力程度（高、中、低）。</p>
           <CodeBlock language="toml" code={`model_provider = "api111"
-model = "gpt-5.5"
+model = "${displayModelId}"
 model_reasoning_effort = "high"
 disable_response_storage = true
 preferred_auth_method = "apikey"
@@ -170,14 +189,14 @@ touch ~/.codex/config.toml`} />
         </li>
         <li>编辑 <code>auth.json</code> 文件：
           <CodeBlock language="bash" code="vi ~/.codex/auth.json" />
-          按 <code>i</code> 进入插入模式，粘贴以下配置内容（将 <code>sk-xxx</code> 替换为您的密钥），然后按 <code>ESC</code> 键，输入 <code>:wq</code> 并回车保存退出。
-          <CodeBlock language="json" code='{"OPENAI_API_KEY": "sk-xxx"}' />
+          按 <code>i</code> 进入插入模式，粘贴以下配置内容，然后按 <code>ESC</code> 键，输入 <code>:wq</code> 并回车保存退出。
+          <CodeBlock language="json" code={`{"OPENAI_API_KEY": "${displayApiKey}"}`} />
         </li>
         <li>编辑 <code>config.toml</code> 文件：
           <CodeBlock language="bash" code="vi ~/.codex/config.toml" />
           按 <code>i</code> 进入插入模式，粘贴以下内容，然后按 <code>ESC</code> 键，输入 <code>:wq</code> 并回车保存退出。
           <CodeBlock language="toml" code={`model_provider = "api111"
-model = "gpt-5.5"
+model = "${displayModelId}"
 model_reasoning_effort = "high"
 disable_response_storage = true
 preferred_auth_method = "apikey"
@@ -264,14 +283,14 @@ touch ~/.codex/config.toml`} />
         </li>
         <li>编辑 <code>auth.json</code> 文件：
           <CodeBlock language="bash" code="vi ~/.codex/auth.json" />
-          按 <code>i</code> 进入插入模式，粘贴以下内容（将 <code>sk-xxx</code> 替换为您的密钥），然后按 <code>ESC</code> 键，输入 <code>:wq</code> 并回车保存退出。
-          <CodeBlock language="json" code='{"OPENAI_API_KEY": "sk-xxx"}' />
+          按 <code>i</code> 进入插入模式，粘贴以下内容，然后按 <code>ESC</code> 键，输入 <code>:wq</code> 并回车保存退出。
+          <CodeBlock language="json" code={`{"OPENAI_API_KEY": "${displayApiKey}"}`} />
         </li>
         <li>编辑 <code>config.toml</code> 文件：
           <CodeBlock language="bash" code="vi ~/.codex/config.toml" />
           按 <code>i</code> 进入插入模式，粘贴以下内容，然后按 <code>ESC</code> 键，输入 <code>:wq</code> 并回车保存退出。
           <CodeBlock language="toml" code={`model_provider = "api111"
-model = "gpt-5.5"
+model = "${displayModelId}"
 model_reasoning_effort = "high"
 disable_response_storage = true
 preferred_auth_method = "apikey"
@@ -289,23 +308,6 @@ wire_api = "responses"`} />
       <CodeBlock language="bash" code="cd your-project-folder" />
       <p>运行以下命令启动：</p>
       <CodeBlock language="bash" code="codex" />
-
-      <hr className="my-10 border-zinc-200 dark:border-zinc-800" />
-
-      <h2 id="vscode-plugin" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 scroll-mt-24">
-        VSCode 插件 codex
-      </h2>
-      <p>以上配置完成后，在 VSCode 扩展商店中搜索并安装 <code>codex</code> 即可。</p>
-      <p>安装完成后会出现在侧边栏。</p>
-      <p>找到并点击 Settings，以打开 VSCode 系 IDE 的 settings.json 文件。</p>
-      
-      <p>在 <code>settings.json</code> 文件末尾，添加以下配置。<br/>
-      ⚠️注意：apikey 替换为你自己的API令牌！！ 其他内容原封不动粘贴即可！！</p>
-
-      <CodeBlock language="json" code={`"chatgpt.apiBase": "https://deeprouter.top/v1",
-"chatgpt.apiKey": "替换sk-你的令牌",
-"chatgpt.config": "{\\"preferred_auth_method\\": \\"apikey\\"}",
-"chatgpt.model": "gpt-5.2-Codex"`} />
 
       <h2 id="faq" className="border-b border-zinc-200 dark:border-zinc-800 pb-2 mt-10 scroll-mt-24">
         常见问题
