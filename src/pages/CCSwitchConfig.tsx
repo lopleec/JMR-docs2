@@ -50,7 +50,12 @@ export function CCSwitchConfig() {
             </tr>
             <tr>
               <td className="py-3 px-4 font-medium text-zinc-900 dark:text-zinc-100">API 格式</td>
-              <td className="py-3 px-4"><code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-orange-500 font-mono text-sm">OpenAI Chat Completions</code></td>
+              <td className="py-3 px-4">
+                <div className="flex flex-col space-y-1">
+                  <div><code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-orange-500 font-mono text-sm">OpenAI Chat Completions</code></div>
+                  <div><code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-orange-500 font-mono text-sm">Responses</code> <span className="text-zinc-500 dark:text-zinc-400 text-sm ml-1">（如果使用 Codex 请使用 Responses 格式）</span></div>
+                </div>
+              </td>
             </tr>
             <tr>
               <td className="py-3 px-4 font-medium text-zinc-900 dark:text-zinc-100">认证字段</td>
